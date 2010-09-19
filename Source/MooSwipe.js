@@ -14,7 +14,7 @@ requires:
 	- Class.Extras
 
 provides:
-	MooSwipe
+- MooSwipe
 */
 var MooSwipe = MooSwipe || new Class({
 	Implements: [Options, Events],
