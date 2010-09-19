@@ -8,13 +8,14 @@ authors:
 - Caleb Troughton
 
 requires:
-	core/1.2.4:
-	- Element.Event
-	- Class
-	- Class.Extras
+  core/1.2.4:
+  - Element.Event
+  - Class
+  - Class.Extras
 
 provides:
 - MooSwipe
+
 ...
 */
 var MooSwipe = MooSwipe || new Class({
