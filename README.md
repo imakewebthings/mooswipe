@@ -16,11 +16,14 @@ How to use
 Typical usage:
 
 	new MooSwipe('swipe-id', {
-		onSwipeleft: function() {
+		onSwipeLeft: function() {
 			// Code to execute on left swipe
 		},
-		onSwiperight: function() {
+		onSwipeRight: function() {
 			// Code to execute on right swipe
+		},
+		onSwipe: function(direction) {
+			// Code to execute on any swipe
 		}
 	});
 
@@ -35,24 +38,28 @@ Example:
 	new MooSwipe('swipe-id', {
 		tolerance: 50,
 		preventDefaults: false,
-		onSwipeleft: ...,
-		onSwiperight: ...
+		onSwipeLeft: ...,
+		onSwipeRight: ...,
+		onSwipe: ...
 	});
 
 Events
 ------
-- swipeleft
-- swiperight
+- swipeLeft
+- swipeRight
+- swipe: passed a string indicating the direction, 'left' or 'right'
 
 Event functions can be included in the MooSwipe initialization:
 
 	new MooSwipe('swipe-id', {
-		onSwipeleft: function() { ... },
-		onSwiperight: function() { ... }
+		onSwipeLeft: function() { ... },
+		onSwipeRight: function() { ... },
+		onSwipe: function(direction) { ... }
 	});
 
 Or added afterwards:
 
 	var swipe = new MooSwipe('swipe-id');
-	swipe.addEvent('swipeleft', function() { ... });
-	swipe.addEvent('swiperight', function() { ... });
+	swipe.addEvent('swipeLeft', function() { ... });
+	swipe.addEvent('swipeRight', function() { ... });
+	swipe.addEvent('swipe', function(direction) { ... });

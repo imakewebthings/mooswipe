@@ -22,8 +22,9 @@ var MooSwipe = MooSwipe || new Class({
 	Implements: [Options, Events],
 	
 	options: {
-		//onSwipeleft: $empty,
-		//onSwiperight: $empty,
+		//onSwipeLeft: $empty,
+		//onSwipeRight: $empty,
+		//onSwipe: $empty,
 		tolerance: 20,
 		preventDefaults: true
 	},
@@ -51,7 +52,8 @@ var MooSwipe = MooSwipe || new Class({
 			var dx = this.startX - x;
 			if (Math.abs(dx) >= this.options.tolerance) {
 				this.cancelTouch();
-				this.fireEvent(dx > 0 ? 'swipeleft' : 'swiperight');
+				this.fireEvent(dx > 0 ? 'swipeLeft' : 'swipeRight');
+				this.fireEvent('swipe', dx > 0 ? 'left' : 'right');
 			}
 		}
 	},
